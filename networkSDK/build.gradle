@@ -51,8 +51,15 @@ publishing {
     }
 
     repositories {
+        mavenLocal()
+    }
+    repositories {
         maven {
             url = uri("https://jitpack.io")
+            credentials {
+                username = "NayanKhengar"
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }

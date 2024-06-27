@@ -5,14 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nayan.tmdbmoviesdemo.databinding.FragmentTopratedMoviesBinding
+import com.nayan.networksdk.utils.ConnectivityUtils
+import com.nayan.tmdbmoviesdemo.databinding.FragmentMoviesBinding
 
 class TopRatedMoviesFragment : Fragment() {
 
-    private lateinit var binding: FragmentTopratedMoviesBinding
+    private lateinit var binding: FragmentMoviesBinding
     private lateinit var viewModel: MovieViewModel
     private lateinit var adapter: MovieAdapter
 
@@ -20,7 +23,7 @@ class TopRatedMoviesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTopratedMoviesBinding.inflate(inflater, container, false)
+        binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -34,6 +37,7 @@ class TopRatedMoviesFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         viewModel.topRatedMovies.observe(viewLifecycleOwner) { movies ->
+            binding.progressbar.isVisible = false
             adapter.submitList(movies)
             adapter.setOnItemClickListener {
                 val intent = Intent(activity, MovieDetailActivity::class.java)
@@ -42,6 +46,11 @@ class TopRatedMoviesFragment : Fragment() {
             }
         }
 
-        viewModel.fetchTopRatedMovies()
+        if (ConnectivityUtils.isNetworkConnected(requireContext())) {
+            viewModel.fetchTopRatedMovies()
+        } else {
+            Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 }

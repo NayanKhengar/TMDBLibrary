@@ -5,15 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nayan.networksdk.ConnectivityUtils
-import com.nayan.tmdbmoviesdemo.databinding.FragmentPopularMoviesBinding
+import com.nayan.networksdk.utils.ConnectivityUtils
+import com.nayan.tmdbmoviesdemo.databinding.FragmentMoviesBinding
 
 class PopularMoviesFragment : Fragment() {
 
-    private lateinit var binding: FragmentPopularMoviesBinding
+    private lateinit var binding: FragmentMoviesBinding
     private lateinit var viewModel: MovieViewModel
     private lateinit var adapter: MovieAdapter
 
@@ -21,7 +23,7 @@ class PopularMoviesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
+        binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -35,6 +37,7 @@ class PopularMoviesFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         viewModel.popularMovies.observe(viewLifecycleOwner) { movies ->
+            binding.progressbar.isVisible = false
             adapter.submitList(movies)
             adapter.setOnItemClickListener {
                 val intent = Intent(activity, MovieDetailActivity::class.java)
@@ -44,6 +47,9 @@ class PopularMoviesFragment : Fragment() {
         }
         if (ConnectivityUtils.isNetworkConnected(requireContext())) {
             viewModel.fetchPopularMovies()
+        } else {
+            Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }

@@ -5,17 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.nayan.networksdk.NetworkSDK
-import com.nayan.networksdk.YourResponseModel
+import com.nayan.tmdbmoviesdemo.R
 import com.nayan.tmdbmoviesdemo.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val networkSDK by lazy { NetworkSDK(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,30 +18,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(TopRatedMoviesFragment(), "Top Rated")
-        adapter.addFragment(PopularMoviesFragment(), "Popular")
+        adapter.addFragment(TopRatedMoviesFragment(), getString(R.string.top_rated))
+        adapter.addFragment(PopularMoviesFragment(), getString(R.string.popular))
 
         binding.viewPager.adapter = adapter
         binding.tabs.setupWithViewPager(binding.viewPager)
-    }
-    private fun fetchData() {
-        networkSDK.fetchData(object : Callback<YourResponseModel> {
-            override fun onResponse(
-                call: Call<YourResponseModel>,
-                response: Response<YourResponseModel>
-            ) {
-                if (response.isSuccessful) {
-                    val data: YourResponseModel? = response.body()
-                    // Handle successful response
-                } else {
-                    // Handle unsuccessful response
-                }
-            }
-
-            override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
-                // Handle network errors
-            }
-        })
     }
 }
 

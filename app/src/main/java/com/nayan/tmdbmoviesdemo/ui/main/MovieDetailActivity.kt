@@ -1,10 +1,12 @@
 package com.nayan.tmdbmoviesdemo.ui.main
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.Chip
+import com.nayan.networksdk.utils.ConnectivityUtils
 import com.nayan.tmdbmoviesdemo.databinding.ActivityMovieDetailBinding
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
@@ -119,14 +121,16 @@ class MovieDetailActivity : AppCompatActivity() {
             }
 
         }
-
-        viewModel.fetchMovieDetails(movieId)
-        viewModel.fetchMovieCast(movieId)
-//        viewModel.fetchMovieMediaVideos(movieId)
-        viewModel.fetchMovieImages(movieId)
-        viewModel.fetchMovieRecommendations(movieId)
-        viewModel.fetchMovieKeywords(movieId)
-
+        if (ConnectivityUtils.isNetworkConnected(this@MovieDetailActivity)) {
+            viewModel.fetchMovieDetails(movieId)
+            viewModel.fetchMovieCast(movieId)
+            viewModel.fetchMovieImages(movieId)
+            viewModel.fetchMovieRecommendations(movieId)
+            viewModel.fetchMovieKeywords(movieId)
+        } else {
+            Toast.makeText(this@MovieDetailActivity, "No internet connection", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
     fun formatDateString(dateString: String): String {
