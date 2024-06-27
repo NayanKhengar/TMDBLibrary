@@ -10,11 +10,11 @@ plugins {
 android {
     namespace 'com.nayan.tmdbmoviesdemo'
 
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.nayan.tmdbmoviesdemo"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion 24
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

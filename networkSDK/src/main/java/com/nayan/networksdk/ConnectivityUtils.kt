@@ -1,4 +1,3 @@
-// ConnectivityUtils.kt
 package com.nayan.networksdk
 
 import android.content.Context

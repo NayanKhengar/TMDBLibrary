@@ -1,11 +1,11 @@
-package com.nayan.tmdbmoviesdemo.data.api
+package com.nayan.networksdk.data.api
 
-import com.nayan.tmdbmoviesdemo.data.model.MovieCastCrewResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieDetailsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieImagesResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieKeywordsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieRecommendationsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieResponse
+import com.nayan.networksdk.data.model.MovieCastCrewResponse
+import com.nayan.networksdk.data.model.MovieDetailsResponse
+import com.nayan.networksdk.data.model.MovieImagesResponse
+import com.nayan.networksdk.data.model.MovieKeywordsResponse
+import com.nayan.networksdk.data.model.MovieRecommendationsResponse
+import com.nayan.networksdk.data.model.MovieResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

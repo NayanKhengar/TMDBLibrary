@@ -1,4 +1,3 @@
-// NetworkSDK.kt
 package com.nayan.networksdk
 
 import android.content.Context
@@ -14,10 +13,10 @@ class NetworkSDK(private val context: Context) {
     fun fetchData(callback: Callback<YourResponseModel>) {
         if (!ConnectivityUtils.isNetworkConnected(context)) {
             // Handle no network connection
-            callback.onFailure(
-                Call<YourResponseModel>,
-                IOException("No internet connection")
-            )
+//            callback.onFailure(
+//                Call<YourResponseModel>,
+//                IOException("No internet connection")
+//            )
             return
         }
 

@@ -1,6 +1,15 @@
 package com.nayan.tmdbmoviesdemo.data.model
 
 import com.google.gson.annotations.SerializedName
+import com.nayan.networksdk.data.model.Backdrop
+import com.nayan.networksdk.data.model.CastCrew
+import com.nayan.networksdk.data.model.Genre
+import com.nayan.networksdk.data.model.KeyValue
+import com.nayan.networksdk.data.model.Logo
+import com.nayan.networksdk.data.model.Movie
+import com.nayan.networksdk.data.model.ProductionCompany
+import com.nayan.networksdk.data.model.ProductionCountry
+import com.nayan.networksdk.data.model.SpokenLanguage
 
 
 data class MovieResponse(

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nayan.tmdbmoviesdemo.R
-import com.nayan.tmdbmoviesdemo.data.model.CastCrew
+import com.nayan.networksdk.data.model.CastCrew
 import com.nayan.tmdbmoviesdemo.databinding.ItemMovieCastcrewBinding
 import com.squareup.picasso.Picasso
 

@@ -1,4 +1,3 @@
-// YourResponseModel.kt
 package com.nayan.networksdk
 
 data class YourResponseModel(

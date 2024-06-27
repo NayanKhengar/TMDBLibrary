@@ -4,13 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nayan.tmdbmoviesdemo.data.model.CastCrew
-import com.nayan.tmdbmoviesdemo.data.model.KeyValue
-import com.nayan.tmdbmoviesdemo.data.model.Movie
-import com.nayan.tmdbmoviesdemo.data.model.MovieCastCrewResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieDetailsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieImagesResponse
-import com.nayan.tmdbmoviesdemo.data.repository.MovieRepository
+import com.nayan.networksdk.data.model.KeyValue
+import com.nayan.networksdk.data.model.Movie
+import com.nayan.networksdk.data.model.MovieCastCrewResponse
+import com.nayan.networksdk.data.model.MovieDetailsResponse
+import com.nayan.networksdk.data.model.MovieImagesResponse
+import com.nayan.networksdk.data.repository.MovieRepository
 import kotlinx.coroutines.launch
 
 class MovieViewModel : ViewModel() {

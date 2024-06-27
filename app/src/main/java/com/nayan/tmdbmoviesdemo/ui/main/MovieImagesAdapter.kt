@@ -3,7 +3,7 @@ package com.nayan.tmdbmoviesdemo.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nayan.tmdbmoviesdemo.data.model.Backdrop
+import com.nayan.networksdk.data.model.Backdrop
 import com.nayan.tmdbmoviesdemo.databinding.ItemMovieImagesBinding
 import com.squareup.picasso.Picasso
 

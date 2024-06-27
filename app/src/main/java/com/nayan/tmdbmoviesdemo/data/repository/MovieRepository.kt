@@ -1,13 +1,13 @@
 package com.nayan.tmdbmoviesdemo.data.repository
 
-import com.nayan.tmdbmoviesdemo.data.api.MovieApiService
-import com.nayan.tmdbmoviesdemo.data.api.RetrofitClient
-import com.nayan.tmdbmoviesdemo.data.model.MovieCastCrewResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieDetailsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieImagesResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieKeywordsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieRecommendationsResponse
-import com.nayan.tmdbmoviesdemo.data.model.MovieResponse
+import com.nayan.networksdk.data.api.MovieApiService
+import com.nayan.networksdk.data.api.RetrofitClient
+import com.nayan.networksdk.data.model.MovieCastCrewResponse
+import com.nayan.networksdk.data.model.MovieDetailsResponse
+import com.nayan.networksdk.data.model.MovieImagesResponse
+import com.nayan.networksdk.data.model.MovieKeywordsResponse
+import com.nayan.networksdk.data.model.MovieRecommendationsResponse
+import com.nayan.networksdk.data.model.MovieResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

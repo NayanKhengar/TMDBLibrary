@@ -3,7 +3,7 @@ package com.nayan.tmdbmoviesdemo.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nayan.tmdbmoviesdemo.data.model.Movie
+import com.nayan.networksdk.data.model.Movie
 import com.nayan.tmdbmoviesdemo.databinding.ItemMovieBinding
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat

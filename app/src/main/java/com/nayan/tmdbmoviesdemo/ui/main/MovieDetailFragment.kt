@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.nayan.tmdbmoviesdemo.data.model.Movie
 import com.nayan.tmdbmoviesdemo.databinding.FragmentMovieDetailBinding
-import com.squareup.picasso.Picasso
 
 class MovieDetailFragment : Fragment() {
 

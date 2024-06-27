@@ -1,4 +1,4 @@
-package com.nayan.tmdbmoviesdemo.data.api
+package com.nayan.networksdk.data.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

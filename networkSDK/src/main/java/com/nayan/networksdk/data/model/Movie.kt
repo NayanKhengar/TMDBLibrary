@@ -1,4 +1,4 @@
-package com.nayan.tmdbmoviesdemo.data.model
+package com.nayan.networksdk.data.model
 
 import com.google.gson.annotations.SerializedName
 
